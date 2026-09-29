@@ -220,7 +220,16 @@ function toNameFace(n) {
 }
 
 function restart() {
-  location.reload();
+  finishFlag = 0;
+
+  // 이전 결과를 지움
+  document.getElementById("resultField").innerHTML = "";
+
+  // 다시 하기 버튼은 항상 표시
+  document.getElementById("restartButton").style.display = "block";
+
+  // 게임을 처음부터 다시 시작
+  initList();
 }
 
 window.onload = function() {
